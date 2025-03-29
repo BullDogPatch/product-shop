@@ -1,6 +1,7 @@
 import { fetchProductByID } from '@/api/api';
 import { Button } from '@/components/ui/button';
 import { Product } from '@/lib/types';
+// import Image from 'next/image';
 
 interface Params {
   params: Promise<{ id: number }>;
@@ -11,13 +12,6 @@ const ProductPage = async ({ params }: Params) => {
   const product: Product = await fetchProductByID(id);
 
   return (
-    // <div>
-    //   <h2>{product.title}</h2>
-    //   <img src={product.image} alt={product.title} />
-    //   <p>{product.description}</p>
-    //   <p>£{product.price}</p>
-    //   <p>{'⭐'.repeat(product.rating.rate)}</p>
-    // </div>
     <section className='py-8 md:py-16 antialiased'>
       <div className='max-w-screen-xl px-4 mx-auto 2xl:px-0'>
         <div className='lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16'>
@@ -121,9 +115,9 @@ const ProductPage = async ({ params }: Params) => {
                 >
                   <path
                     stroke='currentColor'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
                     d='M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z'
                   />
                 </svg>
@@ -146,9 +140,9 @@ const ProductPage = async ({ params }: Params) => {
                 >
                   <path
                     stroke='currentColor'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                    stroke-width='2'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth='2'
                     d='M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6'
                   />
                 </svg>
