@@ -11,8 +11,8 @@ const ProductsPage = async () => {
   return (
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6 lg:p-14'>
       {products.map((product) => (
-        <Link href={`/products/${product.id}`}>
-          <Card key={product.id}>
+        <Link key={product.id} href={`/products/${product.id}`}>
+          <Card>
             <div className='grid gap-4 p-4'>
               <div className='aspect-[4/5] w-full overflow-hidden rounded-xl'>
                 <img
