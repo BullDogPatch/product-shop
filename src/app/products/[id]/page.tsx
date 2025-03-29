@@ -35,7 +35,7 @@ const ProductPage = async ({ params }: Params) => {
             </h1>
             <div className='mt-4 sm:items-center sm:gap-4 sm:flex'>
               <p className='text-2xl font-extrabold sm:text-3xl'>
-                {product.price}
+                £{product.price}
               </p>
 
               <div className='flex items-center gap-2 mt-2 sm:mt-0'>
