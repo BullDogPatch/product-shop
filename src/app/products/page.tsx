@@ -28,7 +28,7 @@ const ProductsPage = async () => {
             </div>
             <div className='grid gap-1.5'>
               <h3 className='font-semibold text-sm md:text-base'>
-                {product.title.slice(0, 20)}
+                {product.title.slice(0, 25)}...
               </h3>
               <p className='font-semibold text-sm md:text-base'>
                 £{product.price}
