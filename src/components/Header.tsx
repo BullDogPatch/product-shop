@@ -1,5 +1,4 @@
 import ShoppingCartModal from './cart-modal';
-import CartTotal from './CartTotal';
 import { ModeToggle } from './ModeToggle';
 
 const Header = () => {

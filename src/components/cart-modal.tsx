@@ -19,7 +19,6 @@ import { Product } from '@/lib/types';
 export default function ShoppingCartModal() {
   const {
     cartItems,
-    getCartTotal,
     totalItems,
     subtotal,
     handleRemoveItem,
