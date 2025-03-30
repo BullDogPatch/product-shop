@@ -13,34 +13,8 @@ import {
 } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import Image from 'next/image';
 import { CartContext } from './cart-provider';
 import { Product } from '@/lib/types';
-
-// Sample cart items data
-const initialCartItems = [
-  {
-    id: 1,
-    name: 'Vintage T-Shirt',
-    price: 29.99,
-    quantity: 1,
-    image: '/placeholder.svg?height=80&width=80',
-  },
-  {
-    id: 2,
-    name: 'Classic Denim Jeans',
-    price: 59.99,
-    quantity: 2,
-    image: '/placeholder.svg?height=80&width=80',
-  },
-  {
-    id: 3,
-    name: 'Leather Sneakers',
-    price: 89.99,
-    quantity: 1,
-    image: '/placeholder.svg?height=80&width=80',
-  },
-];
 
 export default function ShoppingCartModal() {
   const {
@@ -79,7 +53,7 @@ export default function ShoppingCartModal() {
               <ShoppingCart className='h-12 w-12 text-muted-foreground mb-4' />
               <h3 className='text-lg font-medium'>Your cart is empty</h3>
               <p className='text-muted-foreground mt-1'>
-                Looks like you haven't added anything to your cart yet.
+                Looks like you haven&apos;t added anything to your cart yet.
               </p>
             </div>
           ) : (
