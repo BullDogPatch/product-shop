@@ -17,7 +17,7 @@ const ProductPage = async ({ params }: Params) => {
         <div className='lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16'>
           <div className='shrink-0 max-w-md lg:max-w-lg mx-auto'>
             <img
-              className='h-[400px] w-full aspect-[4/5]'
+              className='h-[400px] w-full aspect-[4/5] rounded-xl'
               src={product.image}
               alt=''
             />

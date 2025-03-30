@@ -16,6 +16,8 @@ export const CartProvider = ({ children }) => {
     }
   });
 
+  console.log(cartItems);
+
   const addToCart = (item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
 
