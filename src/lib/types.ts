@@ -9,6 +9,7 @@ export interface Product {
     count: number;
     rate: number;
   };
+  quantity?: number | undefined;
 }
 
 export interface SingleProduct {
