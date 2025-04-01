@@ -1,6 +1,5 @@
 import { fetchProductByID } from '@/api/api';
 import AddToCartButton from '@/components/add-to-cart-button';
-import { Button } from '@/components/ui/button';
 import { SingleProduct } from '@/lib/types';
 
 interface Params {
