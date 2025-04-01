@@ -16,9 +16,13 @@ export default async function Home(props: {
       <div className='flex flex-col'>
         <Search placeholder='search products' />
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6 lg:p-14'>
-          {products.map((product: Product) => (
-            <ProductCard product={product} />
-          ))}
+          {!products.length ? (
+            <p>No products with that name found :(</p>
+          ) : (
+            products.map((product: Product) => (
+              <ProductCard product={product} />
+            ))
+          )}
         </div>
       </div>
     </div>
