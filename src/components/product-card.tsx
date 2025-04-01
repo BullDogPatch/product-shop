@@ -18,7 +18,7 @@ const ProductCard = ({ product }: Props) => {
         <div className='grid gap-4 p-4'>
           <div className='aspect-[4/5] w-full overflow-hidden rounded-xl'>
             <img
-              src={product.image}
+              src={product.images[0]}
               alt='Product image'
               width='400'
               height='500'
@@ -33,7 +33,7 @@ const ProductCard = ({ product }: Props) => {
               £{product.price}
             </p>
           </div>
-          <p>{'⭐'.repeat(product.rating.rate)}</p>
+          <p>{'⭐'.repeat(product.rating)}</p>
           <Button
             size='sm'
             className='cursor-pointer pointer-events-auto'

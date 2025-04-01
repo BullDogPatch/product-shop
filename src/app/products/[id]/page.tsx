@@ -1,7 +1,6 @@
 import { fetchProductByID } from '@/api/api';
 import { Button } from '@/components/ui/button';
-import { Product } from '@/lib/types';
-// import Image from 'next/image';
+import { SingleProduct } from '@/lib/types';
 
 interface Params {
   params: Promise<{ id: number }>;
@@ -9,7 +8,7 @@ interface Params {
 
 const ProductPage = async ({ params }: Params) => {
   const { id } = await params;
-  const product: Product = await fetchProductByID(id);
+  const product: SingleProduct = await fetchProductByID(id);
 
   return (
     <section className='py-8 md:py-16 antialiased'>
@@ -18,7 +17,7 @@ const ProductPage = async ({ params }: Params) => {
           <div className='shrink-0 max-w-md lg:max-w-lg mx-auto'>
             <img
               className='h-[400px] w-full aspect-[4/5] rounded-xl'
-              src={product.image}
+              src={product.images[0]}
               alt=''
             />
           </div>
@@ -89,10 +88,10 @@ const ProductPage = async ({ params }: Params) => {
                   >
                     <path d='M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z' />
                   </svg> */}
-                  {'⭐'.repeat(product.rating.rate)}
+                  {'⭐'.repeat(product.rating)}
                 </div>
                 <p className='text-sm font-medium leading-none text-gray-500 dark:text-gray-400'>
-                  ({product.rating.rate})
+                  ({product.rating})
                 </p>
               </div>
             </div>
