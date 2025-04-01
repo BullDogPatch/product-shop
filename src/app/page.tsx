@@ -20,7 +20,7 @@ export default async function Home(props: {
             <p>No products with that name found :(</p>
           ) : (
             products.map((product: Product) => (
-              <ProductCard product={product} />
+              <ProductCard product={product} key={product.id} />
             ))
           )}
         </div>

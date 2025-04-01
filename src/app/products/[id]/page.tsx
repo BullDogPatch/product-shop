@@ -1,7 +1,6 @@
 import { fetchProductByID } from '@/api/api';
 import { Button } from '@/components/ui/button';
-import { Product, SingleProduct } from '@/lib/types';
-// import Image from 'next/image';
+import { SingleProduct } from '@/lib/types';
 
 interface Params {
   params: Promise<{ id: number }>;
