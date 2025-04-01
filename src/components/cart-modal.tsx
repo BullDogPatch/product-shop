@@ -15,6 +15,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { CartContext } from './cart-provider';
 import { Product } from '@/lib/types';
+import Link from 'next/link';
 
 export default function ShoppingCartModal() {
   const {
@@ -148,7 +149,9 @@ export default function ShoppingCartModal() {
             </Button>
             <SheetClose asChild>
               <Button variant='outline' className='w-full'>
-                Continue Shopping
+                <Link href='/' onClick={() => setIsOpen(false)}>
+                  Continue Shopping
+                </Link>
               </Button>
             </SheetClose>
           </div>

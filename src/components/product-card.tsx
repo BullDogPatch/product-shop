@@ -26,7 +26,10 @@ const ProductCard = ({ product }: Props) => {
             />
           </div>
           <div className='grid gap-1.5'>
-            <h3 className='font-semibold text-sm md:text-base'>
+            <h3
+              className='font-semibold text-sm md:text-base'
+              title={product.title}
+            >
               {product.title.slice(0, 25)}...
             </h3>
             <p className='font-semibold text-sm md:text-base'>
@@ -38,8 +41,8 @@ const ProductCard = ({ product }: Props) => {
             size='sm'
             className='cursor-pointer pointer-events-auto'
             onClick={(e) => {
-              e.stopPropagation(); // Prevents navigation
-              e.preventDefault(); // Optional: Prevents default behavior of the Link
+              e.stopPropagation();
+              e.preventDefault();
               addToCart(product);
             }}
           >
