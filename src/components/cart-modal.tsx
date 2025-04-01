@@ -29,7 +29,7 @@ export default function ShoppingCartModal() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button variant='outline' size='icon' className='relative'>
+        <Button variant='outline' size='icon' className='relative m-2'>
           <ShoppingCart className='h-5 w-5' />
           {totalItems > 0 && (
             <Badge className='absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs'>
@@ -82,7 +82,7 @@ export default function ShoppingCartModal() {
                       </Button>
                     </div>
                     <p className='text-sm text-muted-foreground'>
-                      ${item.price.toFixed(2)}
+                      ${item.price?.toFixed(2)}
                     </p>
                     <div className='flex items-center mt-auto'>
                       <div className='flex items-center border rounded-md'>
@@ -119,7 +119,7 @@ export default function ShoppingCartModal() {
                         </Button>
                       </div>
                       <span className='ml-auto font-medium'>
-                        £{(item.price * (item.quantity ?? 1)).toFixed(2)}
+                        £{(item.price * (item.quantity ?? 1))?.toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ export default function ShoppingCartModal() {
           <div className='space-y-4'>
             <div className='flex items-center justify-between'>
               <span className='font-medium'>Subtotal</span>
-              <span className='font-medium'>£{subtotal.toFixed(2)}</span>
+              <span className='font-medium'>£{subtotal?.toFixed(2)}</span>
             </div>
             <div className='flex items-center justify-between text-sm text-muted-foreground'>
               <span>Shipping and taxes calculated at checkout</span>
