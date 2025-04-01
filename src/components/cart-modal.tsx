@@ -61,7 +61,7 @@ export default function ShoppingCartModal() {
                 <li key={item.id} className='flex gap-4'>
                   <div className='rounded-md overflow-hidden flex-shrink-0 h-20 w-20 bg-muted'>
                     <img
-                      src={item.image || '/placeholder.svg'}
+                      src={item.thumbnail || '/placeholder.svg'}
                       alt={item.title}
                       width={80}
                       height={80}
