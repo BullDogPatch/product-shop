@@ -119,7 +119,7 @@ export default function ShoppingCartModal() {
                         </Button>
                       </div>
                       <span className='ml-auto font-medium'>
-                        ${(item.price * (item.quantity ?? 1)).toFixed(2)}
+                        £{(item.price * (item.quantity ?? 1)).toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ export default function ShoppingCartModal() {
           <div className='space-y-4'>
             <div className='flex items-center justify-between'>
               <span className='font-medium'>Subtotal</span>
-              <span className='font-medium'>${subtotal.toFixed(2)}</span>
+              <span className='font-medium'>£{subtotal.toFixed(2)}</span>
             </div>
             <div className='flex items-center justify-between text-sm text-muted-foreground'>
               <span>Shipping and taxes calculated at checkout</span>
