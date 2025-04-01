@@ -1,5 +1,6 @@
 import { fetchProductByID } from '@/api/api';
 import AddToCartButton from '@/components/add-to-cart-button';
+import { Badge } from '@/components/ui/badge';
 import { SingleProduct } from '@/lib/types';
 
 interface Params {
@@ -95,7 +96,11 @@ const ProductPage = async ({ params }: Params) => {
                 </p>
               </div>
             </div>
-
+            <div className='mt-4'>
+              {product.tags?.map((tag) => (
+                <Badge className='mr-1 rounded-sm'>{tag}</Badge>
+              ))}
+            </div>
             <div className='mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8'>
               <a
                 href='#'

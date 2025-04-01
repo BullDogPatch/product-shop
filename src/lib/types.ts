@@ -18,6 +18,7 @@ export interface SingleProduct {
   category: string;
   images: string[];
   rating: number;
+  tags?: string[];
 }
 
 // "products": [
