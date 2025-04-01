@@ -6,16 +6,20 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 
-export function SelectScrollable() {
+export async function SelectScrollable({
+  categories,
+}: {
+  categories: string[];
+}) {
   return (
     <Select>
       <SelectTrigger className='w-[180px]'>
-        <SelectValue placeholder='Theme' />
+        <SelectValue placeholder='Category' />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value='light'>Light</SelectItem>
-        <SelectItem value='dark'>Dark</SelectItem>
-        <SelectItem value='system'>System</SelectItem>
+        {categories.map((category) => (
+          <SelectItem value={category}>{category}</SelectItem>
+        ))}
       </SelectContent>
     </Select>
   );

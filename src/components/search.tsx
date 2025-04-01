@@ -19,7 +19,7 @@ const Search = ({ placeholder }: { placeholder: string }) => {
   };
 
   return (
-    <div className='relative w-1/2 mx-auto mt-2'>
+    <div className='relative w-1/2 mt-2'>
       <label htmlFor='search' className='sr-only'>
         Search
       </label>

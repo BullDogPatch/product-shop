@@ -15,3 +15,17 @@ export const fetchFilteredProducts = async (query: string) => {
   if (!response.ok) throw new Error('Failed to fetch products');
   return await response.json();
 };
+
+export const fetchCategories = async () => {
+  const response = await fetch('https://dummyjson.com/products/category-list');
+  if (!response.ok) throw new Error('Failed to fetch categories');
+  return await response.json();
+};
+
+export const fetchProductsByCategory = async (category: string) => {
+  const response = await fetch(
+    `https://dummyjson.com/products/category/${category}`
+  );
+  if (!response.ok) throw new Error('Failed to fetch products by category');
+  return await response.json();
+};
