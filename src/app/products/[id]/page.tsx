@@ -98,7 +98,9 @@ const ProductPage = async ({ params }: Params) => {
             </div>
             <div className='mt-4'>
               {product.tags?.map((tag) => (
-                <Badge className='mr-1 rounded-sm'>{tag}</Badge>
+                <Badge key={tag} className='mr-1 rounded-sm'>
+                  {tag}
+                </Badge>
               ))}
             </div>
             <div className='mt-6 sm:gap-4 sm:items-center sm:flex sm:mt-8'>
