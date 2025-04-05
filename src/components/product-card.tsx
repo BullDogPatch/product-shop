@@ -5,6 +5,7 @@ import { SingleProduct } from '@/lib/types';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import { CartContext } from './cart-provider';
+import Image from 'next/image';
 
 interface Props {
   product: SingleProduct;
@@ -17,11 +18,11 @@ const ProductCard = ({ product }: Props) => {
       <Card>
         <div className='grid gap-4 p-4'>
           <div className='aspect-[4/5] w-full overflow-hidden rounded-xl'>
-            <img
+            <Image
               src={product.images[0]}
               alt='Product image'
-              width='400'
-              height='500'
+              width={400}
+              height={500}
               className='aspect-[4/5] object-cover border w-full'
             />
           </div>
