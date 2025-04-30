@@ -30,7 +30,11 @@ export default function ShoppingCartModal() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button variant='outline' size='icon' className='relative m-2'>
+        <Button
+          variant='outline'
+          size='icon'
+          className='relative m-2 cursor-pointer'
+        >
           <ShoppingCart className='h-5 w-5' />
           {totalItems > 0 && (
             <Badge className='absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs'>
@@ -141,7 +145,7 @@ export default function ShoppingCartModal() {
               <span>Shipping and taxes calculated at checkout</span>
             </div>
             <Button
-              className='w-full'
+              className='w-full cursor-pointer'
               size='lg'
               disabled={cartItems.length === 0}
             >
