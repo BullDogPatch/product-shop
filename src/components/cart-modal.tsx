@@ -149,7 +149,9 @@ export default function ShoppingCartModal() {
               size='lg'
               disabled={cartItems.length === 0}
             >
-              Checkout
+              <Link href='/checkout' onClick={() => setIsOpen(false)}>
+                Checkout
+              </Link>
             </Button>
             <SheetClose asChild>
               <Button variant='outline' className='w-full'>
