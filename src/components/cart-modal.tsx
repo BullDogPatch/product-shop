@@ -87,7 +87,7 @@ export default function ShoppingCartModal() {
                       </Button>
                     </div>
                     <p className='text-sm text-muted-foreground'>
-                      ${item.price?.toFixed(2)}
+                      £{item.price?.toFixed(2)}
                     </p>
                     <div className='flex items-center mt-auto'>
                       <div className='flex items-center border rounded-md'>
