@@ -21,6 +21,8 @@ import {
   SelectItem,
 } from '@/components/ui/select';
 import { CartContext } from '@/components/cart-provider';
+import { Product, SingleProduct } from '@/lib/types';
+import { Badge } from '@/components/ui/badge';
 
 type IconProps = React.SVGProps<SVGSVGElement>;
 
@@ -33,14 +35,20 @@ export default function Component() {
     handleUpdateQuantity,
   } = useContext(CartContext);
 
+  const taxes = ((subtotal / 100) * 0.5).toFixed(2);
+
   return (
-    <main className='container mx-auto my-8 grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr]'>
+    <main className='w-[90%] mx-auto my-8 grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr]'>
       <div>
         <h1 className='text-2xl font-bold'>Your Cart</h1>
-        <div className='mt-4 space-y-4'>
-          <div className='flex items-center gap-4 rounded-lg border bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-950'>
+
+        {cartItems.map((cartItem: SingleProduct) => (
+          <div
+            key={cartItem.id}
+            className='mt-4 flex items-center gap-4 rounded-lg border bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-950'
+          >
             <img
-              src='/placeholder.svg'
+              src={cartItem.thumbnail}
               width={80}
               height={80}
               alt='Product Image'
@@ -48,8 +56,14 @@ export default function Component() {
               style={{ aspectRatio: '80/80', objectFit: 'cover' }}
             />
             <div className='flex-1'>
-              <h3 className='text-lg font-medium'>Acme Headphones</h3>
-              <p className='text-gray-500 dark:text-gray-400'>Black, Large</p>
+              <h3 className='text-lg font-medium'>{cartItem.title}</h3>
+              <div className='mt-4'>
+                {cartItem.tags?.map((tag) => (
+                  <Badge key={tag} className='mr-1 rounded-sm'>
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
             </div>
             <div className='flex items-center gap-2'>
               <Button variant='outline' size='icon'>
@@ -60,33 +74,8 @@ export default function Component() {
                 <PlusIcon className='h-4 w-4' />
               </Button>
             </div>
-            <div className='text-right font-medium'>$99.99</div>
           </div>
-          <div className='flex items-center gap-4 rounded-lg border bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-950'>
-            <img
-              src='/placeholder.svg'
-              width={80}
-              height={80}
-              alt='Product Image'
-              className='rounded-md'
-              style={{ aspectRatio: '80/80', objectFit: 'cover' }}
-            />
-            <div className='flex-1'>
-              <h3 className='text-lg font-medium'>Acme T-Shirt</h3>
-              <p className='text-gray-500 dark:text-gray-400'>Blue, Medium</p>
-            </div>
-            <div className='flex items-center gap-2'>
-              <Button variant='outline' size='icon'>
-                <MinusIcon className='h-4 w-4' />
-              </Button>
-              <span>2</span>
-              <Button variant='outline' size='icon'>
-                <PlusIcon className='h-4 w-4' />
-              </Button>
-            </div>
-            <div className='text-right font-medium'>$39.99</div>
-          </div>
-        </div>
+        ))}
       </div>
       <div className='space-y-4'>
         <Card>
@@ -96,16 +85,16 @@ export default function Component() {
           <CardContent className='space-y-2'>
             <div className='flex items-center justify-between'>
               <span>Subtotal</span>
-              <span>$139.98</span>
+              <span>£{subtotal}</span>
             </div>
             <div className='flex items-center justify-between'>
               <span>Taxes</span>
-              <span>$11.20</span>
+              <span>£{taxes}</span>
             </div>
             <Separator />
             <div className='flex items-center justify-between font-medium'>
               <span>Total</span>
-              <span>$151.18</span>
+              <span>£{(subtotal + Number(taxes)).toFixed(2)}</span>
             </div>
           </CardContent>
         </Card>

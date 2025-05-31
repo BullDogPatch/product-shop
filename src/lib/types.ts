@@ -19,6 +19,7 @@ export interface SingleProduct {
   images: string[];
   rating: number;
   tags?: string[];
+  thumbnail: string;
 }
 
 // "products": [
