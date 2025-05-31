@@ -21,21 +21,15 @@ import {
   SelectItem,
 } from '@/components/ui/select';
 import { CartContext } from '@/components/cart-provider';
-import { Product, SingleProduct } from '@/lib/types';
+import { SingleProduct } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
 import { Trash2 } from 'lucide-react';
 
 type IconProps = React.SVGProps<SVGSVGElement>;
 
 export default function Component() {
-  const {
-    cartItems,
-    totalItems,
-    subtotal,
-    addToCart,
-    handleRemoveItem,
-    handleUpdateQuantity,
-  } = useContext(CartContext);
+  const { cartItems, subtotal, handleRemoveItem, handleUpdateQuantity } =
+    useContext(CartContext);
 
   const taxes = ((subtotal / 100) * 0.5).toFixed(2);
 
@@ -208,27 +202,6 @@ function PlusIcon(props: IconProps) {
     >
       <path d='M5 12h14' />
       <path d='M12 5v14' />
-    </svg>
-  );
-}
-
-function Package2Icon(props: IconProps) {
-  return (
-    <svg
-      {...props}
-      xmlns='http://www.w3.org/2000/svg'
-      width='24'
-      height='24'
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
-      strokeWidth='2'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-    >
-      <path d='M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z' />
-      <path d='m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9' />
-      <path d='M12 3v6' />
     </svg>
   );
 }
