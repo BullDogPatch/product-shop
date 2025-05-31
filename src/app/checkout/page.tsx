@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -20,10 +20,19 @@ import {
   SelectContent,
   SelectItem,
 } from '@/components/ui/select';
+import { CartContext } from '@/components/cart-provider';
 
 type IconProps = React.SVGProps<SVGSVGElement>;
 
 export default function Component() {
+  const {
+    cartItems,
+    totalItems,
+    subtotal,
+    handleRemoveItem,
+    handleUpdateQuantity,
+  } = useContext(CartContext);
+
   return (
     <main className='container mx-auto my-8 grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr]'>
       <div>
