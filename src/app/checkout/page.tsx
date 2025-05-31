@@ -118,7 +118,7 @@ export default function Component() {
           <CardContent className='space-y-2'>
             <div className='flex items-center justify-between'>
               <span>Subtotal</span>
-              <span>£{subtotal}</span>
+              <span>£{subtotal.toFixed(2)}</span>
             </div>
             <div className='flex items-center justify-between'>
               <span>Taxes</span>
