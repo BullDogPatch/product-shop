@@ -23,6 +23,7 @@ import {
 import { CartContext } from '@/components/cart-provider';
 import { Product, SingleProduct } from '@/lib/types';
 import { Badge } from '@/components/ui/badge';
+import { Trash2 } from 'lucide-react';
 
 type IconProps = React.SVGProps<SVGSVGElement>;
 
@@ -32,11 +33,13 @@ export default function Component() {
     totalItems,
     subtotal,
     addToCart,
-    removeFromCart,
+    handleRemoveItem,
     handleUpdateQuantity,
   } = useContext(CartContext);
 
   const taxes = ((subtotal / 100) * 0.5).toFixed(2);
+
+  console.log(cartItems);
 
   return (
     <main className='w-[90%] mx-auto my-8 grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr]'>
@@ -68,19 +71,40 @@ export default function Component() {
             </div>
             <div className='flex items-center gap-2'>
               <Button
+                className='cursor-pointer'
                 variant='outline'
                 size='icon'
-                onClick={() => removeFromCart(cartItem)}
+                onClick={() =>
+                  handleUpdateQuantity(
+                    cartItem.id,
+                    (cartItem.quantity || 1) - 1
+                  )
+                }
               >
                 <MinusIcon className='h-4 w-4' />
               </Button>
-              <span>1</span>
+              <span>{cartItem.quantity}</span>
               <Button
+                className='cursor-pointer'
                 variant='outline'
                 size='icon'
-                onClick={() => addToCart(cartItem)}
+                onClick={() =>
+                  handleUpdateQuantity(
+                    cartItem.id,
+                    (cartItem.quantity || 1) + 1
+                  )
+                }
               >
                 <PlusIcon className='h-4 w-4' />
+              </Button>
+              <Button
+                variant='ghost'
+                size='icon'
+                className='h-8 w-8 rounded-full cursor-pointer'
+                onClick={() => handleRemoveItem(cartItem.id)}
+              >
+                <Trash2 className='h-4 w-4' />
+                <span className='sr-only'>Remove</span>
               </Button>
             </div>
           </div>

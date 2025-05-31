@@ -20,6 +20,7 @@ export interface SingleProduct {
   rating: number;
   tags?: string[];
   thumbnail: string;
+  quantity?: number | undefined;
 }
 
 // "products": [
