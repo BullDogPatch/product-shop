@@ -31,7 +31,8 @@ export default function Component() {
     cartItems,
     totalItems,
     subtotal,
-    handleRemoveItem,
+    addToCart,
+    removeFromCart,
     handleUpdateQuantity,
   } = useContext(CartContext);
 
@@ -66,11 +67,19 @@ export default function Component() {
               </div>
             </div>
             <div className='flex items-center gap-2'>
-              <Button variant='outline' size='icon'>
+              <Button
+                variant='outline'
+                size='icon'
+                onClick={() => removeFromCart(cartItem)}
+              >
                 <MinusIcon className='h-4 w-4' />
               </Button>
               <span>1</span>
-              <Button variant='outline' size='icon'>
+              <Button
+                variant='outline'
+                size='icon'
+                onClick={() => addToCart(cartItem)}
+              >
                 <PlusIcon className='h-4 w-4' />
               </Button>
             </div>
