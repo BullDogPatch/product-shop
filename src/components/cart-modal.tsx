@@ -79,7 +79,7 @@ export default function ShoppingCartModal() {
                       <Button
                         variant='ghost'
                         size='icon'
-                        className='h-8 w-8 rounded-full'
+                        className='h-8 w-8 rounded-full cursor-pointer'
                         onClick={() => handleRemoveItem(item.id)}
                       >
                         <Trash2 className='h-4 w-4' />
@@ -94,7 +94,7 @@ export default function ShoppingCartModal() {
                         <Button
                           variant='ghost'
                           size='icon'
-                          className='h-8 w-8 rounded-none rounded-l-md'
+                          className='h-8 w-8 rounded-none rounded-l-md cursor-pointer'
                           onClick={() =>
                             handleUpdateQuantity(
                               item.id,
@@ -111,7 +111,7 @@ export default function ShoppingCartModal() {
                         <Button
                           variant='ghost'
                           size='icon'
-                          className='h-8 w-8 rounded-none rounded-r-md'
+                          className='h-8 w-8 rounded-none rounded-r-md cursor-pointer'
                           onClick={() =>
                             handleUpdateQuantity(
                               item.id,
